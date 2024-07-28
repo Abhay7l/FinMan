@@ -22,7 +22,7 @@ export const units = pgTable("units", {
 });
 
 export const unitsRelations = relations(units, ({ many, one }) => ({
-    // each unit will have only one course
+    // each unit will have only one course and unit.courseId will be refer to the id of its course.
     course: one(courses, {
         fields: [units.courseId],
         references: [courses.id],
@@ -38,8 +38,8 @@ export const lessons = pgTable("lessons", {
     order: integer("order").notNull(),
 });
 
-// each lessons needs to have one unitId
 export const lessonsRelations = relations(lessons, ({many, one}) => ({
+    // each lessons needs to have one unitId and lesson.unitId will be refer to the id of its unit
     unit: one(units, {
         fields: [lessons.unitId],
         references: [units.id],
@@ -58,6 +58,7 @@ export const challenges = pgTable("challenges", {
 });
 
 export const challengesRelations = relations(challenges, ({many, one}) => ({
+    // each challenge will be linked to a lesson. And the challenges.lessonId will refer to the if of its lesson.
     lesson: one(lessons, {
         fields: [challenges.lessonId],
         references: [lessons.id],
