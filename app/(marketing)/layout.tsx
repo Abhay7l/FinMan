@@ -1,4 +1,4 @@
-import { Footer } from "./footer";
+// import { Footer } from "./footer";
 import { Header } from "./header";
 
 type Props = {
@@ -12,7 +12,7 @@ const MarketingPage = ({children}: Props) => {
             <main className="flex-1 flex flex-col items-center justify-center">
                 {children}
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
