@@ -1,7 +1,7 @@
 import { auth } from "@clerk/nextjs"
 
 const adminIds = [
-    "user_2doo0pRoHZUnQuTbS4CKjFwiB3l",
+    "user_2kyEeFZ0o8QGIk3I1nThiITPxz2",
 ];
 
 export const isAdmin = () => {
